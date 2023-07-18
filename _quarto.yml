@@ -1,19 +1,48 @@
 project:
   type: website
-
+  output-dir: docs
+  
 website:
-  title: "quarto_website_template"
+  title: "Website_Title"
+  site-url: https://github.com/wiesehahn/quarto_website_template/index.html
+  repo-url: https://github.com/wiesehahn/quarto_website_template
+  open-graph: true
+  twitter-card:
+    creator: '@JensWiesehahn'
+  search: false
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "Home_Title"
+
+    # add sections here
+      # - href: subpage.qmd
+      #   text: "Subpage_Title"
+      
+    right:
+      - icon: github
+        href: https://github.com/@username/quarto_website_template
+  page-footer:
+    border: false
+    left: "Copyright 2023, Jens Wiesehahn"
+    right:
+      - icon: github
+        href: https://github.com/wiesehahn
+      - icon: twitter
+        href: https://twitter.com/JensWiesehahn
+      - icon: mastodon
+        href: https://elk.zone/fosstodon.org/@JensWiesehahn
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: [litera]
     toc: true
+    smooth-scroll: true
+    highlight: kate
+    page-layout: full
+    code-copy: true
+    code-overflow: wrap
 
-editor: visual
+
+
 

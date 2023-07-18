@@ -21,21 +21,26 @@ website:
       
     right:
       - icon: github
-        href: https://github.com/@username/quarto_website_template
-  page-footer:
-    border: false
-    left: "Copyright 2023, Jens Wiesehahn"
-    right:
-      - icon: github
         href: https://github.com/wiesehahn
       - icon: twitter
         href: https://twitter.com/JensWiesehahn
       - icon: mastodon
         href: https://elk.zone/fosstodon.org/@JensWiesehahn
+      - icon: envelope-fill
+        href: mailto::wiesehahn.jens@gmail.com
+
+  page-footer:
+    border: false
+    left: "© 2023, Jens Wiesehahn"
+    right:
+      - icon: github
+        href: https://github.com/wiesehahn/quarto_website_template
+      
 
 format:
   html:
-    theme: [litera]
+    theme: [litera, custom_theme.scss]
+    mainfont: Nunito
     toc: true
     smooth-scroll: true
     highlight: kate

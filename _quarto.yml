@@ -15,7 +15,7 @@ website:
     logo: images/topographic-contour-lines.avif
     left:
       - href: content/index.qmd
-        text: "Home_Title"
+        text: "Home_Title" # automatically from document title if not provided
 
     # add sections here
       # - href: content/subpage.qmd

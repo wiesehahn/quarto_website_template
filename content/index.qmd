@@ -83,33 +83,41 @@ This document provides examples of the most commonly used markdown syntax. See t
 ```
 ## Links & Images
 
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Markdown Syntax                                              | Output                                                                                                 |
-+==============================================================+========================================================================================================+
-| ``` markdown                                                 | <https://quarto.org>                                                                                   |
-| <https://quarto.org>                                         |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [Quarto](https://quarto.org)                                                                           |
-| [Quarto](https://quarto.org)                                 |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | ![Caption](elephant.png){fig-alt="A line drawing of an elephant."}                                     |
-| ![Caption](elephant.png)                                     |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![Caption](elephant.png)](https://quarto.org)                                                         |
-| [![Caption](elephant.png)](https://quarto.org)               |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![Caption](elephant.png "An elephant"){fig-alt="A line drawing of an elephant."}](https://quarto.org) |
-| [![Caption](elephant.png)](https://quarto.org "An elephant") |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| ``` markdown                                                 | [![](elephant.png){fig-alt="A line drawing of an elephant."}](https://quarto.org)                      |
-| [![](elephant.png){fig-alt="Alt text"}](https://quarto.org)  |                                                                                                        |
-| ```                                                          |                                                                                                        |
-+--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+``` markdown                                                                                                                                     
+<https://quarto.org>                                                                                                                                                 
+```
+<https://quarto.org>
+
+
+``` markdown                                                                                                                  
+[Quarto](https://quarto.org)                                                                                                                                         
+```
+[Quarto](https://quarto.org)           
+
+
+``` markdown                                                           
+![Caption](/images/topographic-contour-lines.avif)                                                                                                                   
+```
+![Caption](/images/topographic-contour-lines.avif){fig-alt="A line drawing of  contour-lines."}  
+
+
+``` markdown                                                                             
+[![Caption](/images/topographic-contour-lines.avif)](https://quarto.org)                                                                                             
+```
+[![Caption](/images/topographic-contour-lines.avif)](https://quarto.org)    
+
+
+``` markdown                                                  
+[![Caption](/images/topographic-contour-lines.avif)](https://quarto.org " contour-lines")                                                                               
+```
+[![Caption](/images/topographic-contour-lines.avif " contour-lines"){fig-alt="A line drawing of  contour-lines."}](https://quarto.org) 
+
+
+``` markdown                                                             
+[![](/images/topographic-contour-lines.avif){fig-alt="Alt text"}](https://quarto.org)                                                                                
+```
+[![](/images/topographic-contour-lines.avif){fig-alt="A line drawing of  contour-lines."}](https://quarto.org)          
+
 
 ## Lists
 

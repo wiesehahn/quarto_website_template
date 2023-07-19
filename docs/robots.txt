@@ -1,1 +1,0 @@
-Sitemap: https://github.com/wiesehahn/quarto_website_template/index.html/sitemap.xml

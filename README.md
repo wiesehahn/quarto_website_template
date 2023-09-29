@@ -14,7 +14,7 @@ To individualize content, change the following:
 5. (optionally) change the style of the website (fonts, colors,...) in the [`custom_theme.scss`](/custom_theme.scss) file. 
 
 
-The website is rendered with Quarto either locally (has to be installed) or in Github automatically each time new content is added/changed via Github Actions to the `_site` folder, do not change anything in there. 
+The website is rendered with Quarto either locally (has to be installed) or automatically via Github Actions each time new content is added/changed (merged pull requests). The Html-site is created in the `_site` folder (do not change anything in there manually). In order to make Github actions work you have to change the repository settings under `Settings` / `Pages` / `Source` to `Github Actions`.
 
 ## Info
 

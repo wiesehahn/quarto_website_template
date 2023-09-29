@@ -8,6 +8,7 @@ website:
   site-url: https://github.com/wiesehahn/quarto_website_template/index.html
   repo-url: https://github.com/wiesehahn/quarto_website_template
   favicon: /images/favicon.png
+  image: /images/logo.png
   open-graph: true
   twitter-card:
     creator: '@JensWiesehahn'
@@ -16,7 +17,7 @@ website:
   # title: false
     logo: /images/logo.png
     logo-alt: "Website logo image"
-    logo-href: https://wiesehahn.github.io/
+    # logo-href: https://wiesehahn.github.io/
     collapse: true
     
     left:
@@ -28,6 +29,8 @@ website:
       #   text: "Subpage_Title"
       
     right:
+      - icon: triangle-fill
+        href: https://wiesehahn.github.io
       - icon: github
         href: https://github.com/wiesehahn
       - icon: twitter

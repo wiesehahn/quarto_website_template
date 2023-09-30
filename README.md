@@ -16,6 +16,9 @@ To individualize content, change the following:
 
 The website is rendered with Quarto either locally (has to be installed) or automatically via Github Actions each time new content is added/changed (merged pull requests). The Html-site is created in the `_site` folder (do not change anything in there manually). In order to make Github actions work you have to change the repository settings under `Settings` / `Pages` / `Source` to `Github Actions`.
 
+To add citations you can add a bibliography file (e.g. `references.bib`) and reference it in the `_quarto.yml`. Further information about this [here](https://quarto.org/docs/visual-editor/technical.html#citations). Using [Zotero](https://www.zotero.org/), along with [Better BibTex](https://retorque.re/zotero-better-bibtex/installation/) and then e.g. the [Zotero Citation picker extension](https://github.com/mblode/vscode-zotero) in VSCode is a good way.
+
+
 ## Info
 
 - Helpful tutorials and examples on Quarto in general are listed in the [awesome-quarto repository](https://github.com/mcanouil/awesome-quarto).

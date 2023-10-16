@@ -5,6 +5,23 @@
 $theme: "litera" !default;
 
 
+h2, .h2 {
+  padding-top: 1.8rem;
+}
+
+h3, .h3 {
+  padding-top: 1.8rem;
+}
+
+h4, .h4 {
+  padding-top: 1.2rem;
+}
+
+h5, .h5 {
+  padding-top: 1rem;
+}
+
+
 // The left hand sidebar
 $grid-sidebar-width: 250px !default;
 

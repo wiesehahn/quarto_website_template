@@ -24,8 +24,8 @@ website:
     collapse: true
     
     left:
-        text: "Menu Title" # Menu title of document, automatically from document title if not provided
       - href: content/index.qmd
+        text: "Menu Title" # Menu title of document, automatically from document title if not provided
 
     # add sections here
       # - href: content/subpage.qmd

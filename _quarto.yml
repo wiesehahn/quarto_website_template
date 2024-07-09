@@ -61,7 +61,6 @@ format:
     code-copy: hover
     code-overflow: wrap
     code-line-numbers: false
-    code-line-numbers: false
     grid:
       sidebar-width: 250px
       body-width: 1200px
@@ -69,6 +68,6 @@ format:
 
 tbl-cap-location: top
 
-bibliography: ../references.bib
+# bibliography: ../references.bib
 
 

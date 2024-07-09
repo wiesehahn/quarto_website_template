@@ -3,19 +3,26 @@ project:
   output-dir: _site
   
 website:
-  title: "Website_Title"
+  title: "Wiesehahn"
   site-url: https://github.com/wiesehahn/quarto_website_template/index.html
   repo-url: https://github.com/wiesehahn/quarto_website_template
   open-graph: true
   twitter-card:
     creator: '@JensWiesehahn'
   search: false
+  # reader-mode: true
   navbar:
-  # title: false
-    logo: images/topographic-contour-lines.avif
+    # title: false
+    title: "Jens<span class='icon-line'></span>Wiesehahn"
+    # logo: images/topographic-contour-lines.avif
+    logo: images/triangle.png
+    logo-alt: "Website logo image"
+    logo-href: https://wiesehahn.github.io/
+    collapse: true
+
     left:
       - href: content/index.qmd
-        text: "Home_Title" # automatically from document title if not provided
+        text: "Menu_Title" # Menu title of document, automatically from document title if not provided
 
     # add sections here
       # - href: content/subpage.qmd
@@ -41,14 +48,19 @@ website:
 format:
   html:
     theme: [litera, assets/custom_theme.scss]
+    css: assets/custom_styles.css
     mainfont: Nunito
     toc: true
     smooth-scroll: true
     highlight: kate
     page-layout: full
-    code-copy: true
+    code-copy: hover
     code-overflow: wrap
-
+    grid:
+      sidebar-width: 250px
+      body-width: 1200px
+      margin-width: 250px
+    
 
 
 

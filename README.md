@@ -23,3 +23,5 @@ The website is rendered with Quarto either locally (has to be installed) or in G
 - Style adaptations in this repo adapted from [Ella Kaye's website](https://github.com/EllaKaye/ellakaye.co.uk).
 - Another helpful template repository was the [NOAA-quarto-simple template](https://github.com/nmfs-opensci/NOAA-quarto-simple).
 - Github Action Workflow adpated from [tarleb.com](https://tarleb.com/posts/quarto-with-gh-pages/#actions-only-pages-beta).
+- Good resource on color choice and fonts from [emilhvitfeldt.com](https://www.emilhvitfeldt.com/post/slidecraft-colors-fonts/)
+- Tool to check color contrasts: https://colourcontrast.cc/

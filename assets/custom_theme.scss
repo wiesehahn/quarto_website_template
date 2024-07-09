@@ -5,26 +5,31 @@
 $theme: "litera" !default;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+// The left hand sidebar
+$grid-sidebar-width: 250px !default;
+
+// The main body
+$grid-body-width: 700px !default;
+
+// The right hand margin bar
+$grid-margin-width: 250px !default;
+
+// The gutter that appears between the above columns
+$grid-column-gutter-width: 1.5rem !default;
 
 
-// litera bootswatch theme colors
-/*
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #ddd !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
-*/
 
-// warmer grays (hue 240)
-$white:    #fff !default;
+//@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Nunito&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+
+// fonts
+
+$font-family-sans-serif: 'Nunito', sans-serif, !default;
+$font-family-monospace: 'Roboto Mono', monospace;
+$headings-font-family: 'Libre Franklin', sans-serif !default;
+
+
+$white:    #fefefe !default;
 $gray-100: #F8F8FA !default;
 $gray-200: #E9E9EF !default;
 $gray-300: #DCDCE6 !default;
@@ -36,8 +41,13 @@ $gray-800: #343440 !default;
 $gray-900: #212129 !default;
 $black:    #000 !default;
 
+$blue-400: #4588ec !default;
+$blue-500: #2a6de0 !default;
+$blue-600: #0011bb !default;
+$blue-700: #020f9f !default;
+$blue-800: #010b76 !default;
 
-/*
+
 $blue:    #4582ec !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -48,31 +58,43 @@ $yellow:  #f0ad4e !default;
 $green:   #02b875 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
-*/
 
-//  my colors (comment out above)
-$pink: #D4006A;
-$blue: #006AD4;
-$green: #00D46A;
-$cyan: #00D4D4;
-$red: #D40000;
-$indigo: #0000D4;
-$purple: #6A00D4;
-$orange: #D46A00;
-$yellow: #D4D400;
-$darker-green: #008542;
+// from image logo
+$highlight-pink:  #f10087 !default;
+$highlight-yellow:#fff04c !default;
+$highlight-blue:  #00b0ea !default;
 
-$primary:       $pink !default;
-$secondary:     $gray-500 !default;
+// standard colors
+$light:  $white !default;
+$dark:   $gray-900 !default;
+
+$primary-color: $blue-800 !default;
+$second-color:  $blue-700 !default;
+$third-color:   $blue-600 !default;
+
+
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $orange !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
 
-$second-color:  $purple;
-$third-color:   $blue;
+
+// colour tweaks to theme
+$body-bg: $light;
+$body-color: $dark;
+
+$navbar-bg: $body-bg; 
+$navbar-fg: $body-color;
+
+$code-bg: darken($body-bg, 3%);
+$code-color: $highlight-pink;
+
+$code-block-bg: darken($body-bg, 3%);
+$code-block-border-color: $body-bg;
+
+$card-bg: $body-bg;
+$card-border-color: $gray-300;
+
 
 // font sizes;
 $font-size-base:   1rem !default; // Assumes the browser default, typically `16px`
@@ -83,23 +105,10 @@ $h4-font-size:     $font-size-base * 1.5 !default;
 $h5-font-size:     $font-size-base * 1.25 !default;
 $h6-font-size:     $font-size-base !default;
 
-// colour tweaks to theme
-$body-bg: $light;
-$body-color: $dark;
-$navbar-bg: $body-bg;
-$navbar-fg: $body-color;
-$code-bg: $light;
-$code-color: $second-color;
-$card-bg: $body-bg;
-$card-border-color: $gray-300;
 
-// font size and OpenType tweaks - adjust to make Fira Mono same size as Lemon Milk Light
-
-/*
 h1, h2, h3, h4, h5 {
     font-weight: 300;
 }
-*/
 
 $code-font-size: $font-size-base;
 
@@ -137,7 +146,7 @@ h6 code {
 
 // callouts
 $callout-color-note: $blue;
-$callout-color-tip: $darker-green;
+$callout-color-tip: $green;
 $callout-color-caution: $purple;
 $callout-color-warning: $orange;
 $callout-color-important: $red;
@@ -145,8 +154,8 @@ $callout-color-important: $red;
 /*-- scss:rules --*/
 
 // color classes
-.primary {
-    color: $primary;
+.primary-color {
+    color: $primary-color;
 }
 
 .second-color {
@@ -174,14 +183,16 @@ pre.sourceCode {
 // links
 a {
   color: $body-color;
+  text-decoration: underline;
+  text-decoration-color: lighten($body-color, 50%);// $body-color;
   text-decoration-thickness: 1px;
-  //text-underline-offset: .1rem;
-  //text-underline-position: under;
+  text-underline-offset: .1rem;
+  text-underline-position: under;
 }
 
 a:hover {
-  color: $primary;
-  text-decoration-color: $primary;
+  color: $third-color;
+  text-decoration-color:$highlight-blue;
 }
 
 .toc-actions a {
@@ -190,25 +201,24 @@ a:hover {
 }
 
 .toc-actions a:hover {
-  color: $primary;
+  color: $primary-color;
 }
 
 div.tippy-content a:hover {
-  text-decoration-color: $primary;
+  text-decoration-color: $primary-color;
 }
 
 // navbar
 .navbar-title {
-  font-size: $font-size-base * 1.75;
+  font-size: $font-size-base * 1.5;
 }
 
 // the line in the navbar logo
-// animation defined in ek-styles.css
 .icon-line {
   display: block;
-  background: $primary;
+  background: $dark;
   width: 100%;
-  height: 6px;
+  height: 4px;
   margin: auto;
   display: table;
   margin-top: -6px;
@@ -216,10 +226,6 @@ div.tippy-content a:hover {
 }
 
 /* keep text the body colour when active
-this was a change in Quarto 1.2 - now defaults to a darker shade of $primary
-would be fine, except that I want to target the different list items to keep 
-the color that matches the card
-
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active {
     color: $body-color;
 }
@@ -227,36 +233,16 @@ the color that matches the card
 
 // hover on navbar
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-  color: $primary;
+  color: $third-color;
 }
 .navbar-expand-lg .navbar-nav .nav-link.active {
-  color: $primary;
-}
-
-// then override colors so they match cards
-#navbarCollapse > ul > li:nth-child(2) > a:hover,
-#navbarCollapse > ul > li:nth-child(4) > a:hover {
-  color: $second-color;
-}
-
-#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
-  color: $second-color;
-}
-
-#navbarCollapse > ul > li:nth-child(3) > a:hover,
-#navbarCollapse > ul > li:nth-child(5) > a:hover {
   color: $third-color;
 }
 
-#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
-  color: $third-color;
-}
 
 // stop the name in my icon from changing colour on hover
 .navbar-title:hover {
-  color: $body-color;
+    color: $body-color;
 }
 
 // animated underline on hover, when navbar shows as row
@@ -275,23 +261,13 @@ the color that matches the card
     left: 0;
     right: 0;
     margin: auto;
-    background-color: $primary;
+    background-color: $primary-color;
     width: 0%;
     content: "";
     height: 4px;
     transition: all 0.3s;
   }
-  
-  .navbar .navbar-nav .nav-item:nth-child(2)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(4)::after {
-    background-color: $second-color;
-  }
-  
-  .navbar .navbar-nav .nav-item:nth-child(3)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(5)::after {
-    background-color: $third-color;
-  }
-  
+
   .navbar .navbar-nav .nav-item:hover::after {
     width: 90%;
   }
@@ -299,9 +275,7 @@ the color that matches the card
 
 // header styles (more in ek-styles.css)
 #quarto-header {
-  text-transform: uppercase;
-  //font-family: "LEMONMILKPro-Regular", Jost, Helvetica, sans-serif;
-  // font-family: "ABCSocialExtendedEdu-Bold", Jost, Helvetica, sans-serif;
+  text-transform: capitalize;
   font-family: $headings-font-family;
 }
 
@@ -318,7 +292,6 @@ h1 {
 
 .heading-font {
   font-family: $headings-font-family;
-  //font-family: "LEMONMILKPro-Regular", Jost, Helvetica, sans-serif;
 }
 
 .home-header {
@@ -348,10 +321,10 @@ iframe.slide-deck {
 // icon-links
 .icon-link, div.quarto-about-jolla .about-link {
     background-color: transparent;
-    color: $primary;
+    color: $primary-color;
     //border: 2px solid !important;
     border: 2px solid;
-    border-color: $primary;
+    border-color: $primary-color;
     padding: 5px .4rem 5px .4rem !important;
     margin-top: 4px;
     margin-right: 8px;
@@ -362,16 +335,16 @@ iframe.slide-deck {
 }
 
 .icon-link:hover, div.quarto-about-jolla .about-link:hover{
-    background-color: $primary;
+    background-color: $primary-color;
     color: $body-bg;
-    border-color: $primary;
+    border-color: $primary-color;
     text-decoration: none;
 }
 
 // for cards on home page
 #card-first-color {
   background-color: $body-bg;
-  border: 4px solid $primary;
+  border: 4px solid $primary-color;
   border-radius: 5px; 
 }
 
@@ -388,10 +361,10 @@ iframe.slide-deck {
 }
 
 .card-link {
-    background-color: $primary;
+    background-color: $primary-color;
     color: $body-bg;
-    border: 4px solid $primary;
-    border-color: $primary;
+    border: 4px solid $primary-color;
+    border-color: $primary-color;
     padding: 5px .5rem 5px .5rem !important;
     margin: 0;
     border-radius: 5px; 
@@ -402,7 +375,7 @@ iframe.slide-deck {
 
 .card-link:hover {
   background-color: $body-bg;
-  color: $primary;
+  color: $primary-color;
 }
 
 .second-color-link{
@@ -428,4 +401,61 @@ iframe.slide-deck {
 }
 
 
+.navbar-logo{
+  min-height:70px;
+  overflow: hidden; /* Hide any overflow when the image scales up */
+}
 
+/* Apply styles to the image */
+.navbar-logo {
+  width: 100%; 
+  height: 100%; 
+  transition: transform 0.3s ease;
+}
+
+/* Apply the hover effect to the image */
+.navbar-logo:hover {
+  transform: scale(1.2); /* Increase the image size by 20% on hover */
+}
+
+
+.navbar-title:hover > .icon-line {
+  animation-duration: 600ms;
+  animation-name: line-expand;
+}
+
+@keyframes line-expand {
+  from {
+      width: 0%;
+      //background-color: $third-color;
+  }
+  
+  to {
+      width: 100%;
+      //background-color: $primary-color;
+  }
+}
+
+.resume-jobs-time {
+  font-weight: 500;
+}
+
+//set style for tags (from listing-category=
+.category-tag {
+  color: #6c757d;
+  border: solid 1px #dee2e6;
+  border-radius: .25rem;
+  text-transform: uppercase;
+  font-size: .65em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .15em;
+  padding-bottom: .15em;
+  cursor: pointer;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.tilt-effect {
+  data-tilt: "";
+}
